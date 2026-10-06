@@ -1,0 +1,61 @@
+node_modules/
+dist/
+coverage/
+reports/
+.stryker-tmp/
+.codeql-db/
+*.tgz
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+*.iml
+.DS_Store
+npm-debug.log*
+.copier-answers.yml
+.app-storyboard.port
+.app-storyboard.log
+.claude/
+.codex/
+.playwright-cli/
+/data/graphs/
+/data/input/
+/data/output/
+/config/server.env
+
+# --- macOS ---
+# Finder metadata
+.localized
+
+# AppleDouble metadata / resource forks
+._*
+.AppleDouble
+
+# Launch Services override / archive artifact from Mac-created zips
+.LSOverride
+__MACOSX/
+
+# Filesystem / volume metadata
+.DocumentRevisions-V100/
+.fseventsd/
+.Spotlight-V100/
+.TemporaryItems/
+.Trashes/
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.com.apple.timemachine.supported
+.PKInstallSandboxManager
+.PKInstallSandboxManager-SystemSoftware
+.hotfiles.btree
+.vol
+.file
+.disk_label*
+.HFS+ Private Directory Data/
+
+# Metadata that can appear on network or removable volumes
+.AppleDB/
+.AppleDesktop/
+Network Trash Folder/
+Temporary Items/
+.apdisk
