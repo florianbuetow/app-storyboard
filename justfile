@@ -119,13 +119,9 @@ init: check
     @if ! git rev-parse --git-dir >/dev/null 2>&1; then git init -q; fi
     @npm install
     @git config core.fileMode false
-    @if [ ! -f "$(git rev-parse --git-path hooks/pre-commit)" ]; then \
-        printf "\033[31m✗ Error: %s is missing\033[0m\n" "$(git rev-parse --git-path hooks/pre-commit)"; \
-        printf "  Re-apply the template or restore the generated hook.\n"; \
-        echo ""; \
-        exit 1; \
-    fi
+    @printf '#!/bin/sh\nexec just ci-quiet\n' > "$(git rev-parse --git-path hooks/pre-commit)"
     @chmod +x "$(git rev-parse --git-path hooks/pre-commit)"
+    @printf "\033[32m✓ pre-commit hook is installed\033[0m\n"
     @mkdir -p data/graphs data/input data/output
     @printf "\033[32m✓ data folders are ready\033[0m\n"
     @if [ ! -f config/server.env ]; then \

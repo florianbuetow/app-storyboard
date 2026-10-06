@@ -1,10 +1,10 @@
-# app-storyboard
+# Storyboard App
 
 A local storyboard editor for planning visual stories such as 2D games.
 
 ## About
 
-Use app-storyboard to plan a story before you build it. You map out where the story takes place, how its places connect, and how one scene leads to the next. You also keep track of its characters and of the look you want. The editor runs on your computer and opens in your browser.
+Use Storyboard App to plan a story before you build it. You map out where the story takes place, how its places connect, and how one scene leads to the next. You also keep track of its characters and of the look you want. The editor runs on your computer and opens in your browser.
 
 You work on a board, the location graph. Each place in the story is a location: a card with an image, a name, and a subtitle. Scenes are frames that group locations. Arrows connect them: an arrow between two locations is a way from one to the other, and an arrow between two scenes is a scene change.
 
@@ -12,7 +12,7 @@ Next to the board, you keep your characters with their sprites, and a mood deck 
 
 ![A location graph with location cards grouped into the scenes Data Center and Airport](screenshot.png)
 
-## What you can do
+## What You Can Do
 
 - **Lay out the story.** Drop images and sounds on the board, group locations into scenes, and connect them with arrows. Press G for the scene map, which shows how the scenes link.
 - **Track your characters.** Give each character a profile picture, a bio, and a row of sprites for each animation, such as walking or standing still. The overview shows how complete each character's sprites are.
@@ -20,9 +20,9 @@ Next to the board, you keep your characters with their sprites, and a mood deck 
 - **Plan with an AI assistant.** Ask the chat to create, connect, move, or resize locations and scenes. Its edits appear on the board at once, and one Undo reverts a whole reply.
 - **Keep several graphs.** Create, load, and rename graphs from the graph title in the toolbar. Each graph is a folder in `data/graphs/`. Copy the folder to back up or share the graph.
 
-## Getting started
+## Getting Started
 
-You need [Node.js](https://nodejs.org/) 24 or later with npm, and [just](https://github.com/casey/just). `just init` also expects the code-checking tools [Semgrep](https://semgrep.dev/), [codespell](https://github.com/codespell-project/codespell), the [CodeQL CLI](https://codeql.github.com/), [Gitleaks](https://github.com/gitleaks/gitleaks), [ShellCheck](https://www.shellcheck.net/), and [shfmt](https://github.com/mvdan/sh).
+You need [Node.js](https://nodejs.org/) 24 or later with npm, and [just](https://github.com/casey/just). `just init` tells you what else is missing.
 
 ```bash
 just init    # install dependencies and create config/server.env
