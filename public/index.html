@@ -1793,18 +1793,17 @@
       .chat-head .btn.icon + .btn.icon {
         margin-left: -6px;
       }
-      .chat-cleared {
+      .chat-undo {
         margin-bottom: 12px;
-        font-size: 12.5px;
-        color: var(--ink-2);
       }
-      .chat-cleared button {
+      .chat-undo,
+      .msg.note button {
         border: 0;
-        padding: 0;
-        background: transparent;
-        color: var(--accent);
-        font: 700 12.5px var(--ui);
-        text-decoration: underline;
+        border-radius: 999px;
+        padding: 4px 11px;
+        background: var(--accent);
+        color: #fff;
+        font: 700 12px var(--ui);
         cursor: pointer;
       }
       .chat-model {
@@ -1929,15 +1928,6 @@
         background: var(--accent-soft);
         padding: 6px 11px;
         border-radius: 999px;
-      }
-      .msg.note button {
-        border: 0;
-        background: transparent;
-        color: var(--accent);
-        font: 700 12px var(--ui);
-        text-decoration: underline;
-        cursor: pointer;
-        padding: 0;
       }
       .typing {
         align-self: flex-start;
@@ -8532,7 +8522,7 @@ When you are done, say in a few plain sentences what you did or found.`
           $('#chatCopy').disabled = !chat.messages.length
           $('#chatClear').disabled = !chat.messages.length || chat.busy
           if (!chat.messages.length && !chat.busy) {
-            chatLog.innerHTML = `${chat.cleared ? '<p class="chat-cleared">The chat was cleared. <button data-restore>Undo</button></p>' : ''}<div class="chat-intro">Ask about this board, or tell the assistant what to change: it adds scenes and locations, connects them with arrows, and moves and resizes them. Select items on the canvas to <b>focus the conversation</b> on them. One click undoes every change of a reply.<div class="chips">${['Summarize this graph', 'Which locations are dead ends?', 'Add a scene with three connected locations'].map((t) => `<button class="chip">${esc(t)}</button>`).join('')}</div></div>`
+            chatLog.innerHTML = `${chat.cleared ? '<button class="chat-undo" data-restore>Undo</button>' : ''}<div class="chat-intro">Ask about this board, or tell the assistant what to change: it adds scenes and locations, connects them with arrows, and moves and resizes them. Select items on the canvas to <b>focus the conversation</b> on them.<div class="chips">${['Summarize this graph', 'Which locations are dead ends?', 'Add a scene with three connected locations'].map((t) => `<button class="chip">${esc(t)}</button>`).join('')}</div></div>`
             return
           }
           const lastNote = [...chat.messages]

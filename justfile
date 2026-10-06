@@ -118,6 +118,7 @@ init: check
     @printf "\033[34m=== Initializing Development Environment ===\033[0m\n"
     @if ! git rev-parse --git-dir >/dev/null 2>&1; then git init -q; fi
     @npm install
+    @git config core.fileMode false
     @if [ ! -f "$(git rev-parse --git-path hooks/pre-commit)" ]; then \
         printf "\033[31m✗ Error: %s is missing\033[0m\n" "$(git rev-parse --git-path hooks/pre-commit)"; \
         printf "  Re-apply the template or restore the generated hook.\n"; \
@@ -140,21 +141,21 @@ init: check
 start: build
     @echo ""
     @printf "\033[34m=== Starting the Location Graph Server ===\033[0m\n"
-    @scripts/server.sh start
+    @bash scripts/server.sh start
     @printf "\033[32m✓ start completed successfully\033[0m\n"
     @echo ""
 
 stop:
     @echo ""
     @printf "\033[34m=== Stopping the Location Graph Server ===\033[0m\n"
-    @scripts/server.sh stop
+    @bash scripts/server.sh stop
     @printf "\033[32m✓ stop completed successfully\033[0m\n"
     @echo ""
 
 run *ARGS:
     @echo ""
     @printf "\033[34m=== Running from Source ===\033[0m\n"
-    @{{ if ARGS == "" { "scripts/server.sh run" } else { "npm run --silent dev -- " + ARGS } }}
+    @{{ if ARGS == "" { "bash scripts/server.sh run" } else { "npm run --silent dev -- " + ARGS } }}
     @printf "\033[32m✓ run completed successfully\033[0m\n"
     @echo ""
 

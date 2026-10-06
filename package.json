@@ -4,7 +4,7 @@
   "private": true,
   "description": "A Node.js TypeScript CLI application",
   "author": "",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
   "engines": {
     "node": ">=24.0.0"
